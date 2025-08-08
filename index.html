@@ -1,173 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Raksha Bandhan</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap"
-        rel="stylesheet">
-    <style>
-        /* Custom Styles */
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #fdf2f8;
-            overflow: hidden;
-            /* Prevent body scroll */
-        }
-
-        .font-dancing-script {
-            font-family: 'Dancing Script', cursive;
-        }
-
-        .first-box {
-            background: aliceblue;
-            border: 1px solid #9d1238;
-            border-radius: 20px;
-            box-shadow: 0px 9px 37px 0px beige;
-            padding: 30px;
-        }
-
-        /* Page styles */
-        .page {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            overflow-y: auto;
-            padding: 1.5rem;
-            /* padding-bottom: 8rem; */
-            /* Space for buttons */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Hide all pages except the first one initially */
-        .page:not(#page1) {
-            display: none;
-        }
-
-        /* Elements to animate inside pages */
-        .anim-element {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        /* New floating animation for cards */
-        .card-float {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-
-            100% {
-                transform: translateY(0px);
-            }
-        }
-
-        /* Animated Shadow Styles */
-        .animated-shadow-rose {
-            box-shadow: 0 4px 14px rgba(227, 102, 152, 0.25);
-            transition: all 0.3s ease-out;
-        }
-
-        .animated-shadow-rose:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(227, 102, 152, 0.4);
-        }
-
-        .animated-shadow-purple {
-            box-shadow: 0 4px 14px rgba(126, 34, 206, 0.2);
-            transition: all 0.3s ease-out;
-        }
-
-        .animated-shadow-purple:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(126, 34, 206, 0.35);
-        }
-
-        .animated-shadow-teal {
-            box-shadow: 0 4px 14px rgba(13, 148, 136, 0.2);
-            transition: all 0.3s ease-out;
-        }
-
-        .animated-shadow-teal:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(13, 148, 136, 0.35);
-        }
-
-        /* Modal styles */
-        .modal {
-            transition: opacity 0.3s ease;
-        }
-
-        .modal-content {
-            transition: transform 0.3s ease;
-        }
-
-        .modal.visible .modal-content {
-            transform: scale(1) translateY(0);
-        }
-
-        .modal.hidden .modal-content {
-            transform: scale(0.9) translateY(10px);
-        }
-
-        /* Particle background for page 1 */
-        #particles-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background-color: black;
-            z-index: 0;
-        }
-
-        .particle {
-            position: absolute;
-            background-color: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            animation: move linear infinite;
-            opacity: 0;
-        }
-
-        @keyframes move {
-            to {
-                transform: translateY(-105vh);
-                opacity: 1;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
-<body class="overflow-hidden">
-
+<body>
     <!-- Main Container -->
     <div class="relative min-h-screen w-full">
-
         <!-- Page 1: Welcome Page -->
         <section id="page1" class="page text-center bg-gradient-to-br from-rose-100 to-teal-100">
-            <div id="particles-container"></div>
+            <div id="particles-container" class="absolute top-0 left-0 w-full h-full overflow-hidden bg-black z-0"></div>
             <div class="max-w-3xl z-10 first-box">
-                <h1 class="font-dancing-script text-6xl md:text-8xl text-rose-800 anim-element">Happy Raksha Bandhan
-                </h1>
+                <h1 class="font-dancing-script text-6xl md:text-8xl text-rose-800 anim-element">Happy Raksha Bandhan</h1>
                 <p class="mt-6 text-lg md:text-xl text-gray-700 max-w-2xl mx-auto anim-element">
                     Celebrating the purest bond of love, care, and protection. Raksha Bandhan is a beautiful reminder of
                     the lifelong promise between a brother and sister, a thread that ties hearts together forever.
@@ -182,38 +29,33 @@
         <!-- Page 2: Gift for Sister Page -->
         <section id="page2" class="page text-center bg-gradient-to-br from-purple-100 to-rose-100">
             <div class="container mx-auto">
-                <h2 class="text-4xl md:text-5xl font-bold text-purple-800 mb-12 anim-element">A Gift For Your Beloved
-                    Sister</h2>
+                <h2 class="text-4xl md:text-5xl font-bold text-purple-800 mb-12 anim-element">A Gift For Your Beloved Sister</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Gift Card 1 -->
                     <div class="bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-300 anim-element card-float"
                         style="animation-delay: 0s;">
-                        <img src="images\Chocolates.jpg" alt="Chocolates"
-                            class="w-full h-40 object-cover rounded-lg mx-auto mb-4">
+                        <i class="fas fa-candy-cane text-5xl text-rose-500 mb-4"></i>
                         <h3 class="text-2xl font-semibold text-gray-800">Gourmet Chocolates</h3>
                         <p class="text-gray-600 mt-2">A sweet treat for your even sweeter sister.</p>
                     </div>
                     <!-- Gift Card 2 -->
                     <div class="bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-300 anim-element card-float"
                         style="animation-delay: 0.5s;">
-                        <img src="images\Elegant Bracelet.jpg" alt="Bracelet"
-                            class="w-full h-40 object-cover rounded-lg mx-auto mb-4">
+                        <i class="fas fa-gem text-5xl text-purple-500 mb-4"></i>
                         <h3 class="text-2xl font-semibold text-gray-800">Elegant Bracelet</h3>
                         <p class="text-gray-600 mt-2">A symbol of your unbreakable bond, to cherish forever.</p>
                     </div>
                     <!-- Gift Card 3 -->
                     <div class="bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-300 anim-element card-float"
                         style="animation-delay: 1s;">
-                        <img src="images\Stylish Dress.jpg" alt="Dress"
-                            class="w-full h-40 object-cover rounded-lg mx-auto mb-4">
+                        <i class="fas fa-tshirt text-5xl text-blue-500 mb-4"></i>
                         <h3 class="text-2xl font-semibold text-gray-800">Stylish Dress</h3>
                         <p class="text-gray-600 mt-2">To make her feel as special as she truly is.</p>
                     </div>
                     <!-- Gift Card 4 -->
                     <div class="bg-white rounded-2xl shadow-xl p-6 text-center transition-transform duration-300 anim-element card-float"
                         style="animation-delay: 1.5s;">
-                        <img src="images\Exotic Perfume.jpg" alt="Perfume"
-                            class="w-full h-40 object-cover rounded-lg mx-auto mb-4">
+                        <i class="fas fa-spray-can text-5xl text-teal-500 mb-4"></i>
                         <h3 class="text-2xl font-semibold text-gray-800">Exotic Perfume</h3>
                         <p class="text-gray-600 mt-2">A fragrance to remind her of your lovely memories.</p>
                     </div>
@@ -226,42 +68,34 @@
         </section>
 
         <!-- Page 3: Memories Page -->
-        <section style="padding-top: 25%;" id="page3"
-            class="page text-center bg-gradient-to-br from-teal-100 to-yellow-100">
-            <div class="container mx-auto">
-                <h2 class="text-4xl md:text-5xl font-bold text-teal-800 mb-12 anim-element">Cherished Moments Together
-                </h2>
-                <!-- UPDATED: Grid layout changed for better visibility and smaller images on larger screens -->
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        <section id="page3" class="page text-center bg-gradient-to-br from-teal-100 to-yellow-100">
+            <div class="container mx-auto py-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-teal-800 mb-12 anim-element">Cherished Moments Together</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
                     <!-- Gallery Images -->
-                    <div class="anim-element"><img src="images\Memory_1.jpg" alt="Memory 1"
-                            class="gallery-image w-full h-full object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-300">
+                    <div class="anim-element">
+                        <div class="bg-gradient-to-r from-rose-400 to-pink-500 w-full h-48 rounded-lg shadow-md"></div>
                     </div>
-                    <div class="anim-element"><img
-                            src="images\Memory_2.jpg"
-                            alt="Memory 2"
-                            class="gallery-image w-full h-full object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-300">
+                    <div class="anim-element">
+                        <div class="bg-gradient-to-r from-purple-400 to-indigo-500 w-full h-48 rounded-lg shadow-md"></div>
                     </div>
-                    <div class="anim-element"><img src="images\Memory_3.jpg" alt="Memory 3"
-                            class="gallery-image w-full h-full object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-300">
+                    <div class="anim-element">
+                        <div class="bg-gradient-to-r from-amber-400 to-orange-500 w-full h-48 rounded-lg shadow-md"></div>
                     </div>
-                    <div class="anim-element"><img src="images\Memory_4.jpg" alt="Memory 4"
-                            class="gallery-image w-full h-full object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-300">
+                    <div class="anim-element">
+                        <div class="bg-gradient-to-r from-emerald-400 to-cyan-500 w-full h-48 rounded-lg shadow-md"></div>
                     </div>
-                    <div class="anim-element"><img src="images\Memory_5.jpg" alt="Memory 5"
-                            class="gallery-image w-full h-full object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-300">
+                    <div class="anim-element">
+                        <div class="bg-gradient-to-r from-fuchsia-400 to-violet-500 w-full h-48 rounded-lg shadow-md"></div>
                     </div>
-                    <div class="anim-element"><img src="images\IMG_9535.JPG" alt="Memory 6"
-                            class="gallery-image w-full h-full object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-300">
+                    <div class="anim-element">
+                        <div class="bg-gradient-to-r from-lime-400 to-green-500 w-full h-48 rounded-lg shadow-md"></div>
                     </div>
-                    <div class="anim-element"><img
-                            src="images\IMG_1963.JPG" alt="Memory 7"
-                            class="gallery-image w-full h-full object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-300">
+                    <div class="anim-element">
+                        <div class="bg-gradient-to-r from-sky-400 to-blue-500 w-full h-48 rounded-lg shadow-md"></div>
                     </div>
-                    <div class="anim-element"><img
-                            src="images\IMG_6402.JPG"
-                            alt="Memory 8"
-                            class="gallery-image w-full h-full object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-300">
+                    <div class="anim-element">
+                        <div class="bg-gradient-to-r from-rose-300 to-red-500 w-full h-48 rounded-lg shadow-md"></div>
                     </div>
                 </div>
                 <button id="showWishesBtn"
@@ -270,15 +104,14 @@
                 </button>
             </div>
         </section>
-
-
     </div>
 
     <!-- Image Modal -->
     <div id="imageModal"
         class="modal fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 hidden z-50">
-        <img id="modalImage" src="" alt="Full-size memory"
-            class="modal-content rounded-lg shadow-2xl max-w-[90vw] max-h-[80vh]">
+        <div class="modal-content rounded-lg shadow-2xl max-w-[90vw] max-h-[80vh] bg-white p-4">
+            <div class="bg-gradient-to-r from-rose-400 to-pink-500 w-full h-64 rounded-lg"></div>
+        </div>
         <button class="close-modal-btn absolute top-4 right-4 text-white text-4xl font-bold">&times;</button>
     </div>
 
@@ -299,108 +132,7 @@
         </div>
     </div>
 
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Page elements
-            const pages = document.querySelectorAll('.page');
-            const toPage2Btn = document.getElementById('toPage2Btn');
-            const toPage3Btn = document.getElementById('toPage3Btn');
-            const showWishesBtn = document.getElementById('showWishesBtn');
-
-            // Modal elements
-            const imageModal = document.getElementById('imageModal');
-            const modalImage = document.getElementById('modalImage');
-            const galleryImages = document.querySelectorAll('.gallery-image');
-            const wishesModal = document.getElementById('wishesModal');
-
-            // --- Particle Animation for Page 1 ---
-            function createParticles() {
-                const container = document.getElementById('particles-container');
-                if (!container) return;
-                const particleCount = 50;
-                for (let i = 0; i < particleCount; i++) {
-                    const particle = document.createElement('div');
-                    particle.classList.add('particle');
-                    const size = Math.random() * 5 + 1;
-                    particle.style.width = `${size}px`;
-                    particle.style.height = `${size}px`;
-                    particle.style.left = `${Math.random() * 100}%`;
-                    particle.style.top = `${Math.random() * 100 + 100}vh`; // Start below the screen
-                    particle.style.animationDuration = `${Math.random() * 10 + 5}s`;
-                    particle.style.animationDelay = `${Math.random() * 5}s`;
-                    container.appendChild(particle);
-                }
-            }
-            createParticles();
-
-            // --- GSAP Animations ---
-            // Initial state setup
-            gsap.set(pages, { autoAlpha: 0 });
-            gsap.set(document.querySelectorAll('.page:not(#page1)'), { display: 'none' });
-            gsap.set('#page1', { autoAlpha: 1 });
-            gsap.fromTo("#page1 .anim-element",
-                { y: 30, autoAlpha: 0 },
-                { y: 0, autoAlpha: 1, duration: 0.8, stagger: 0.2, ease: 'power2.out' }
-            );
-
-            // Function to switch pages with GSAP
-            function switchPage(fromPage, toPage) {
-                const fromElements = fromPage.querySelectorAll('.anim-element');
-                const toElements = toPage.querySelectorAll('.anim-element');
-
-                const tl = gsap.timeline();
-                tl.to(fromElements, { y: -30, autoAlpha: 0, duration: 0.5, stagger: 0.1, ease: 'power2.in' })
-                    .to(fromPage, { x: '-100%', autoAlpha: 0, duration: 0.8, ease: 'power3.inOut' }, "-=0.2")
-                    .set(fromPage, { display: 'none' })
-                    .set(toPage, { display: 'flex', x: '100%', autoAlpha: 0 })
-                    .to(toPage, { x: '0%', autoAlpha: 1, duration: 0.8, ease: 'power3.inOut' })
-                    .fromTo(toElements,
-                        { y: 30, autoAlpha: 0 },
-                        { y: 0, autoAlpha: 1, duration: 0.8, stagger: 0.15, ease: 'power2.out' },
-                        "-=0.5"
-                    );
-            }
-
-            // Event Listeners for page navigation
-            toPage2Btn.addEventListener('click', () => switchPage(document.getElementById('page1'), document.getElementById('page2')));
-            toPage3Btn.addEventListener('click', () => switchPage(document.getElementById('page2'), document.getElementById('page3')));
-
-            // --- Modal Logic ---
-            function openModal(modal) {
-                modal.classList.remove('hidden');
-                gsap.to(modal, { autoAlpha: 1, duration: 0.3 });
-                gsap.fromTo(modal.querySelector('.modal-content'), { scale: 0.9, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.3, ease: 'power2.out' });
-                document.body.style.overflow = 'hidden';
-            }
-
-            function closeModal(modal) {
-                gsap.to(modal, { autoAlpha: 0, duration: 0.3, onComplete: () => modal.classList.add('hidden') });
-                document.body.style.overflow = 'auto';
-            }
-
-            // Setup Image Modal
-            galleryImages.forEach(image => {
-                image.addEventListener('click', () => {
-                    modalImage.src = image.src;
-                    openModal(imageModal);
-                });
-            });
-
-            // Setup Wishes Modal
-            showWishesBtn.addEventListener('click', () => {
-                openModal(wishesModal);
-            });
-
-            // Setup all close buttons and background clicks
-            document.querySelectorAll('.modal').forEach(modal => {
-                modal.addEventListener('click', (e) => {
-                    if (e.target === modal) closeModal(modal);
-                });
-                modal.querySelector('.close-modal-btn').addEventListener('click', () => closeModal(modal));
-            });
-        });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
